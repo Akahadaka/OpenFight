@@ -1,0 +1,35 @@
+<resources>
+    <string name="app_name">OpenFight</string>
+    <string name="action_settings">Settings</string>
+    <string name="imgdesc">imgdesc</string>
+
+    <!-- Title -->
+
+    <string-array name="titles">
+        <item>New Round</item>
+        <item>New Game</item>
+        <item>Help</item>
+        <item>About</item>
+    </string-array>
+
+
+    <!-- Page Url -->
+
+    <string-array name="pageurl">
+        <item>file:///android_asset/index.html</item>
+        <item>file:///android_asset/index.html</item>
+        <item>file:///android_asset/help.html</item>
+        <item>file:///android_asset/about.html</item>
+    </string-array>
+
+
+
+    <!-- Icons -->
+
+    <array name="icons">
+        <item>@android:drawable/ic_media_play</item>
+        <item>@android:drawable/ic_media_ff</item>
+        <item>@android:drawable/ic_menu_help</item>
+        <item>@android:drawable/ic_dialog_info</item>
+    </array>
+</resources>
