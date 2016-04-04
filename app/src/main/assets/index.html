@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- Sets initial viewport load -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Title and description of this webpage -->
+    <title>OpenFight</title>
+
+    <meta name="description" content="OpenFight was created as an educational project.">
+    <meta name="author" content="GoodWillTyping, Akahadaka">
+
+    <!-- Makes prototype chrome-less once bookmarked to your phone's home screen -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+    <!-- Include the compiled Third Party CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/jquery.mobile-1.4.5.min.css" rel="stylesheet">
+
+    <!-- Include any Custom CSS -->
+    <link rel="stylesheet" href="css/styles.css?v=1.0">
+    <link rel="stylesheet" href="css/forkongithub.css?v=1.0">
+  </head>
+  <body onload="OF_APP.game.load();" class="page ui-mobile-viewport ui-overlay-a">
+    <!-- FORK ON GITHUB -->
+    <!--<span class="forkongithub">
+      <a href="https://github.com/goodwilltyping/OpenFight" target="_blank">Fork me on GitHub</a>
+    </span>-->
+
+
+    <!-- NAVIGATION -->
+    <a href="#menupanel" id="menu-btn" class="ui-btn ui-btn-icon-notext ui-btn-icon-left ui-icon-bars"></a>
+    <div data-role="panel" id="menupanel" data-position="left" data-display="overlay" data-theme="a" data-position-fixed="true" class="ui-panel ui-panel-position-left ui-panel-display-overlay ui-body-a ui-panel-animate ui-panel-open">
+      <div class="ui-panel-inner">
+        <div class="cole-sm-12 menu" role="navigation">
+          <ul class="nav navbar-nav">
+            <li>&nbsp;</li>
+            <li><a href="javascript:void(0)" onclick="OF_APP.game.shuffle()">New Game</a></li>
+            <li><a href="javascript:void(0)" onclick="OF_APP.game.new()">New Round</a></li>
+            <li role="presentation"><a href="help.html">Help</a></li>
+            <li role="presentation"><a href="about.html">About</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+
+
+        <!-- HEADER -->
+        <!--<div class="row page-header">
+          <div class="col-sm-12 header well-lg">
+            <h1 onclick="document.location.reload()">OpenFight</h1>
+          </div>
+          <div class="col-sm-12 subtitle well-sm">
+            <h1><small>The real world game where you use your words to fight to the death</small></h1>
+          </div>
+        </div>-->
+
+
+      <!-- GAME -->
+      <div class="row players">
+        <div data-role="page" class="col-xs-10 col-xs-offset-1 col-sm-4 col-sm-offset-0">
+          <div class="title"><b>Player 1</b> >> Player 2 >> Location</div>
+          <div class="well fighter card white">
+            <div id="fighter1" class="text" onclick="OF_APP.fighters.get(this);">Select your character</div>
+          </div>
+
+          <div class="well power card black">
+            <div id="power1" class="text" onclick="OF_APP.powers.get(this);">Select your superpower</div>
+          </div>
+
+          <div class="well weapon card black">
+            <div id="weapon1" class="text" onclick="OF_APP.weapons.get(this);">Select your weapon</div>
+          </div>
+        </div>
+
+        <div data-role="page" class="col-xs-10 col-xs-offset-1 col-sm-4 col-sm-offset-0">
+          <div class="title">Player 1 << <b>Player 2</b> >> Location</div>
+          <div class="well fighter card white">
+            <div id="fighter2" class="text" onclick="OF_APP.fighters.get(this);">Select your character</div>
+          </div>
+
+          <div class="well power card black">
+            <div id="power2" class="text" onclick="OF_APP.powers.get(this);">Select your superpower</div>
+          </div>
+
+          <div class="well weapon card black">
+            <div id="weapon2" class="text" onclick="OF_APP.weapons.get(this);">Select your weapon</div>
+          </div>
+        </div>
+
+        <div data-role="page" class="col-xs-10 col-xs-offset-1 col-sm-4 col-sm-offset-0">
+          <div class="title">Player 1 << Player 2 << <b>Location</b></div>
+          <div class="well location card green">
+            <div id="location1" class="text" onclick="OF_APP.locations.get(this);">Select your location</div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- FOOTER -->
+      <!--<div class="row">
+        <div class="col-sm-12 well navbar-bottom">
+          <small><em>This game has been created for educational purposes.
+          <a href="https://github.com/goodwilltyping/OpenFight" target="_blank">Fork me on Github</em></small>
+        </div>
+      </div>-->
+
+    </div>
+    <!-- Include the compiled Third Party JS -->
+    <script src="js/jquery-2.1.4.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- Special scripts for Mobile Webview -->
+    <script>
+      $(document).bind('mobileinit',function(){
+          $.mobile.changePage.defaults.changeHash = false;
+          $.mobile.hashListeningEnabled = false;
+          $.mobile.pushStateEnabled = false;
+      });
+    </script>
+    <script src="js/jquery.mobile-1.4.5.min.js"></script>
+
+    <!-- Include Custom JS -->
+    <script id="panel-init">
+		  $(function() {
+			     $("body>[data-role='panel']").panel();
+		       });
+	  </script>
+
+    <!-- Custom Javascript scripts loaded -->
+    <script src="js/openfight.js?v=1.00"></script>
+    <script src="js/functions.js?v=1.00"></script>
+    <script src="http://localhost:35729/livereload.js"></script>
+
+    <!-- Include Modernizr script to assist with browser compatibility -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script> -->
+  </body>
+</html>
